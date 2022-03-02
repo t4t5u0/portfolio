@@ -9,3 +9,7 @@ services:
 # BFF
 
 # DB
+
+secrets:
+  qiita_api_key:
+    file: qiita_api_key.txt
