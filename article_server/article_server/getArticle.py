@@ -16,11 +16,12 @@ class Article(BaseModel):
 
 
 def get_qiita_articles(user_id: str) -> list[Article]:
-    p = Path(__file__).resolve().parents[1] / "secrets.json"
-    print(p)
+    # p = Path(__file__).resolve().parents[1] / "secrets.json"
+    p = "/run/secrets/qiita_api_key"
     with open(p) as f:
         json_load = json.load(f)
         TOKEN = json_load["token"]
+        # TOKEN = f.read()
 
     headers = {"Authorization": "Bearer " + TOKEN}
 

@@ -9,6 +9,8 @@ services:
       - ./article_server:/usr/src/app
     ports:
       - "8000:8000"
+    secrets:
+      - qiita_api_key
     command: ["uvicorn", "main:app", "--reload", "--host", "0.0.0.0"]
 # API
 
