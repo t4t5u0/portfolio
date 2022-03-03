@@ -16,6 +16,6 @@ services:
 
 # DB
 
-# secrets:
-#   qiita_api_key:
-#     file: qiita_api_key.txt
+secrets:
+  qiita_api_key:
+    file: qiita_api_key.json
