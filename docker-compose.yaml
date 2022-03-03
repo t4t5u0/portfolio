@@ -1,15 +1,21 @@
 version: "3"
-
 services:
-  articles:
-    tty: true
-
+  app:
+    build: 
+      context: .
+      dockerfile: ./Docker/ArticleServer/Dockerfile
+    container_name: api
+    volumes:
+      - ./article_server:/usr/src/app
+    ports:
+      - "8000:8000"
+    command: ["uvicorn", "main:app", "--reload", "--host", "0.0.0.0"]
 # API
 
 # BFF
 
 # DB
 
-secrets:
-  qiita_api_key:
-    file: qiita_api_key.txt
+# secrets:
+#   qiita_api_key:
+#     file: qiita_api_key.txt
