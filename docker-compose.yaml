@@ -1,5 +1,7 @@
 version: "3"
 services:
+
+# API
   app:
     build: 
       context: .
@@ -12,7 +14,6 @@ services:
     secrets:
       - qiita_api_key
     command: ["uvicorn", "main:app", "--reload", "--host", "0.0.0.0"]
-# API
 
 # BFF
 
