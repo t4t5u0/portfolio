@@ -74,7 +74,7 @@ def get_zenn_articles(user_id: str) -> list:
                 {"name": tag.get_text()}
                 for tag in article.select("a.ArticleCard_topicLink__NfdwJ")
             ],
-            "likes_count ": int(
+            "likes_count": int(
                 article.select_one("span.ArticleCard_like__lvRrs").get_text()
             ),
             "created_at": article.select_one("time").get("datetime"),
