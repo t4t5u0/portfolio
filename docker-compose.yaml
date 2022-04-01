@@ -19,6 +19,19 @@ services:
     command: ["uvicorn", "main:app", "--reload", "--host", "0.0.0.0"]
 
 # BFF
+  apollo:
+    image: node:17
+    container_name: apollo
+    volumes:
+      - ./apollo_server:/usr/src/app
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: postgres://postgres:${POSTGRES_PASSWORD}@postgres:5432/pg
+
+    secrets:
+      - POSTGRES_PASSWORD
+    command: ["npm", "run","dev"] # for dev version
 
 # DB
   postgres:
