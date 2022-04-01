@@ -20,7 +20,10 @@ services:
 
 # BFF
   apollo:
-    image: node:17
+    # image: node:17
+    build:
+      context: .
+      dockerfile: ./Docker/apollo_server/Dockerfile
     container_name: apollo
     volumes:
       - ./apollo_server:/usr/src/app
@@ -28,7 +31,8 @@ services:
       - postgres
     environment:
       DATABASE_URL: postgres://postgres:${POSTGRES_PASSWORD}@postgres:5432/pg
-
+    ports:
+      - 4000:4000
     secrets:
       - POSTGRES_PASSWORD
     command: ["npm", "run","dev"] # for dev version
