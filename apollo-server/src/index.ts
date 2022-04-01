@@ -2,15 +2,6 @@ import {ApolloServer, gql} from 'apollo-server';
 
 // GraphQLスキーマの定義
 const typeDefs = gql`
-  # type Book {
-  #   title: String
-  #   author: String
-  # }
-
-  # type Query {
-  #   books: [Book!]!
-  # }
-
   type Tags {
     name: String
   }
@@ -28,23 +19,8 @@ const typeDefs = gql`
   }
 `;
 
-// サンプルデータの定義
-const books = [
-  {
-    title: 'The Awakening',
-    author: 'Kate Chopin',
-  },
-  {
-    title: 'City of Glass',
-    author: 'Paul Auster',
-  },
-];
-
 // リゾルバーの定義
 const resolvers = {
-  // Query: {
-  //   books: () => books,
-  // },
   Query: {
     blogs: () => blogs,
   },
