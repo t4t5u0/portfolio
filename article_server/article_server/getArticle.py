@@ -1,27 +1,17 @@
 import json
-from pathlib import Path
 
 import requests
 from bs4 import BeautifulSoup
 from fastapi import HTTPException
-from pydantic import BaseModel
 
-
-class Article(BaseModel):
-    title: str
-    tags: list[dict[str, str]]
-    url: str
-    likes_count: int
-    created_at: str
+from article_server.types import Article
 
 
 def get_qiita_articles(user_id: str) -> list[Article]:
-    # p = Path(__file__).resolve().parents[1] / "secrets.json"
     p = "/run/secrets/qiita_api_key"
     with open(p) as f:
         json_load = json.load(f)
         TOKEN = json_load["token"]
-        # TOKEN = f.read()
 
     headers = {"Authorization": "Bearer " + TOKEN}
 
@@ -50,7 +40,7 @@ def get_qiita_articles(user_id: str) -> list[Article]:
 
 def get_zenn_articles(user_id: str) -> list:
 
-    ARTICLES = f"https://zenn.dev/{user_id}"
+    ARTICLES = f"https://zenn.dev"
 
     # TODO: ページネーションに対応する
     # TODO: Bookに対応する
