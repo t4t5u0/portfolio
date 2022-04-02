@@ -37,11 +37,11 @@ def init_db():
             exit()
 
         cur.execute("""
-        CREATE TABLE IF NOT EXISTS article (
+        CREATE TABLE IF NOT EXISTS Article (
             id SERIAL PRIMARY KEY,
             title TEXT,
             tags TEXT[],
-            url TEXT,
+            url TEXT UNIQUE,
             likes_count INTEGER,
             created_at TIMESTAMP
         );
@@ -52,7 +52,7 @@ def upsert_article(articles: list[Article]):
     cur = conn.cursor()
     cur.executemany(
         """
-        INSERT INTO article (title, tags, url, likes_count, created_at)
+        INSERT INTO Article (title, tags, url, likes_count, created_at)
         VALUES (%(title)s, %(tags)s, %(url)s, %(likes_count)s, %(created_at)s)
         ON CONFLICT (url) DO UPDATE
         SET title = %(title)s, tags = %(tags)s, likes_count = %(likes_count)s, created_at = %(created_at)s

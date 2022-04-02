@@ -29,13 +29,14 @@ services:
       - ./apollo_server:/usr/src/app
     depends_on:
       - postgres
-    environment:
-      DATABASE_URL: postgres://postgres:${POSTGRES_PASSWORD}@postgres:5432/pg
     ports:
       - 4000:4000
     secrets:
       - POSTGRES_PASSWORD
-    command: ["npm", "run","dev"] # for dev version
+    command: >
+      bash -c "
+      npx prisma migrate dev --name init &&
+      npm run start"
 
 # DB
   postgres:
