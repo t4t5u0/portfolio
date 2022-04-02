@@ -5,7 +5,7 @@ services:
   app:
     build: 
       context: .
-      dockerfile: ./Docker/ArticleServer/Dockerfile
+      dockerfile: ./Docker/article_server/Dockerfile
     container_name: api
     depends_on:
       - postgres
