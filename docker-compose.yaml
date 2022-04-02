@@ -1,9 +1,9 @@
 version: "3"
 services:
 
-# API
+  # API
   app:
-    build: 
+    build:
       context: .
       dockerfile: ./Docker/article_server/Dockerfile
     container_name: api
@@ -16,9 +16,16 @@ services:
     secrets:
       - qiita_api_key
       - POSTGRES_PASSWORD
-    command: ["uvicorn", "main:app", "--reload", "--host", "0.0.0.0"]
+    command:
+      [
+        "uvicorn",
+        "main:app",
+        "--reload",
+        "--host",
+        "0.0.0.0"
+      ]
 
-# BFF
+  # BFF
   apollo:
     # image: node:17
     build:
@@ -34,11 +41,9 @@ services:
     secrets:
       - POSTGRES_PASSWORD
     command: >
-      bash -c "
-      npx prisma migrate dev --name init &&
-      npm run start"
+      bash -c " npx prisma migrate dev --name init && npm run start"
 
-# DB
+  # DB
   postgres:
     image: postgres:14.0
     environment:
@@ -54,6 +59,17 @@ services:
     secrets:
       - POSTGRES_PASSWORD
     restart: always
+
+  frontend:
+    build:
+      context: .
+      dockerfile: ./Docker/frontend/Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - ./frontend:/usr/src/app
+    command: >
+      bash -c "npm run build && npm run start"
 
 secrets:
   qiita_api_key:
