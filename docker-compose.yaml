@@ -66,10 +66,11 @@ services:
       dockerfile: ./Docker/frontend/Dockerfile
     ports:
       - 3000:3000
+      - 3001:3000
     volumes:
       - ./frontend:/usr/src/app
     command: >
-      bash -c "npm run build && npm run start"
+      bash -c "npm run dev"
 
 secrets:
   qiita_api_key:
