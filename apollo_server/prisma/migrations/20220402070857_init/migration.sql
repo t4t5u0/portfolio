@@ -1,5 +1,5 @@
 -- CreateTable
-CREATE TABLE "Article" (
+CREATE TABLE "Blog" (
     "id" SERIAL NOT NULL,
     "title" TEXT NOT NULL,
     "tags" TEXT[],
@@ -7,8 +7,8 @@ CREATE TABLE "Article" (
     "likes_count" INTEGER NOT NULL,
     "created_at" TIMESTAMP(3) NOT NULL,
 
-    CONSTRAINT "Article_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "Blog_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex
-CREATE UNIQUE INDEX "Article_url_key" ON "Article"("url");
+CREATE UNIQUE INDEX "Blog_url_key" ON "Blog"("url");

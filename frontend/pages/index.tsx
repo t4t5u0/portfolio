@@ -14,6 +14,9 @@ const AllTasksQuery = gql`
 
 const Home: NextPage = () => {
   const {loading, error, data} = useQuery(AllTasksQuery);
+  console.log("-----");
+  console.log(data);
+  console.log("-----");
   return (
     <div className={styles.container}>
       <Head>
@@ -22,17 +25,17 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <ul>
-        {data.blogs.map(blog => (
-          <li key={blog.title}>{blog.title}</li>
-        ))}
-      </ul>
-
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
       </main>
+
+      <ul>
+        {data.blogs.map(blog => (
+          <li key={blog.title}>{blog.title}</li>
+        ))}
+      </ul>
 
       <footer className={styles.footer}>
         <a
