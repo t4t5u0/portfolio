@@ -6,18 +6,11 @@ import React from 'react';
 const Page = () => {
   return (
     <>
-      <h1>Page</h1>
-      <p className={'OoohBabys'}>
+      <h1 className={'font-serif'}>Page</h1>
+      <p className={'font-script'}>
         No Tech, <br />
         No Life!
       </p>
-      <style jsx>
-        {`
-          .OoohBabys {
-            font-family: 'Oooh Baby', sans-serif;
-          }
-        `}
-      </style>
     </>
   );
 };

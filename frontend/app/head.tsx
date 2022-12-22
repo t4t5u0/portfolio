@@ -3,7 +3,7 @@ import React from 'react';
 const Head = () => {
   return (
     <>
-      <title>Tatsuo’s Portfolio</title>
+      <title className={'font-serif'}>Tatsuo&apos;s Portfolio</title>
     </>
   );
 };
