@@ -38,8 +38,8 @@ const RootLayout = ({
       className={`${NOTO_SANS_JP.variable} ${NOTO_SERIF_JP.variable} ${OOOH_BABY.variable} `}
     >
       <body>
-        {/* <Header /> */}
-        <div className={'p-2 fixed grid grid-cols-3 font-serif backdrop-blur-sm w-screen z-10'}>
+        <Header />
+        {/* <div className={'p-2 fixed top-0 grid grid-cols-3 font-serif backdrop-blur-sm w-screen text-[#202634]'}>
           <h1>Tatsuo&apos;s Portfolio</h1>
           <div className={'grid grid-cols-4 gap-4'}>
             <Link href={'/'} className={'text-center'}>Home</Link>
@@ -48,7 +48,7 @@ const RootLayout = ({
             <Link href={'/works'} className={'text-center'}>Works</Link>
           </div>
         </div>
-        <div className={'pb-10'}></div>
+        <div className={'pb-10'}></div> */}
         {children}
       </body>
     </html>
