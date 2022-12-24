@@ -11,9 +11,9 @@ const Header = () => {
       <h1>Tatsuo&apos;s Portfolio</h1>
       <div className={'grid grid-cols-4 gap-4'}>
         <Link href={'/'} className={'text-center'}>Home</Link>
-        <Link href={'/profile'} className={'text-center'}>Profile</Link>
         <Link href={'/articles'} className={'text-center'}>Articles</Link>
         <Link href={'/works'} className={'text-center'}>Works</Link>
+        <Link href={'/profile'} className={'text-center'}>Profile</Link>
       </div>
     </div>
     <div className='pt-40px'></div>
