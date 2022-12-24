@@ -39,16 +39,6 @@ const RootLayout = ({
     >
       <body>
         <Header />
-        {/* <div className={'p-2 fixed top-0 grid grid-cols-3 font-serif backdrop-blur-sm w-screen text-[#202634]'}>
-          <h1>Tatsuo&apos;s Portfolio</h1>
-          <div className={'grid grid-cols-4 gap-4'}>
-            <Link href={'/'} className={'text-center'}>Home</Link>
-            <Link href={'/profile'} className={'text-center'}>Profile</Link>
-            <Link href={'/articles'} className={'text-center'}>Articles</Link>
-            <Link href={'/works'} className={'text-center'}>Works</Link>
-          </div>
-        </div>
-        <div className={'pb-10'}></div> */}
         {children}
       </body>
     </html>
