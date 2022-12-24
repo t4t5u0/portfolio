@@ -3,12 +3,12 @@ import {
   InMemoryCache,
   ApolloProvider,
   useQuery,
-  gql
-} from "@apollo/client";
+  gql,
+} from '@apollo/client';
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000',
-  cache: new InMemoryCache()
+  cache: new InMemoryCache(),
 });
 
 // http://localhost:4000/graphql
