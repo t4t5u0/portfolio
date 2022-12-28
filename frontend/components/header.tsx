@@ -7,7 +7,7 @@ const Header = () => {
     <>
       <header
         className={
-          'p-2 fixed grid grid-cols-3 backdrop-blur-sm w-screen z-10 font-serif'
+          'p-2 sticky grid grid-cols-3 backdrop-blur-sm w-screen z-10 font-serif'
         }
       >
         <h1>Tatsuo&apos;s Portfolio</h1>
@@ -15,22 +15,17 @@ const Header = () => {
           <Link href={'/'} className={'text-center'}>
             Home
           </Link>
-          {/* <Link href={'/articles'} className={'text-center'}> */}
-          <Link href={'/'} className={'text-center'}>
+          <Link href={'/articles'} className={'text-center text-slate-300'}>
             Articles
           </Link>
-          <Link href={'/'} className={'text-center'}>
-          {/* <Link href={'/works'} className={'text-center'}> */}
+          <Link href={'/works'} className={'text-center text-slate-300'}>
             Works
           </Link>
-
-          {/* <Link href={'/profile'} className={'text-center'}> */}
-          <Link href={'/'} className={'text-center'}>
+          <Link href={'/profile'} className={'text-center'}>
             Profile
           </Link>
         </div>
       </header>
-      {/* <div className='pt-40px'></div> */}
     </>
   );
 };
