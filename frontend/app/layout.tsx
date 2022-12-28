@@ -1,10 +1,7 @@
 import React from 'react';
-import Header from '../components/header';
-import './global.css';
+import Header from 'components/header';
+import 'styles/globals.css';
 import { Noto_Sans_JP, Noto_Serif_JP, Oooh_Baby } from '@next/font/google';
-import Link from 'next/link';
-// import '../styles/globals.css';
-// import GlobalCSS from '../styles/globals';
 
 const NOTO_SANS_JP = Noto_Sans_JP({
   weight: '300',
@@ -35,7 +32,7 @@ const RootLayout = ({
   return (
     <html
       lang="jp"
-      className={`${NOTO_SANS_JP.variable} ${NOTO_SERIF_JP.variable} ${OOOH_BABY.variable} `}
+      className={`${NOTO_SANS_JP.variable} ${NOTO_SERIF_JP.variable} ${OOOH_BABY.variable}`}
     >
       <body>
         <Header />
