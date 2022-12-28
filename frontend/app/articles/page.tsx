@@ -3,9 +3,8 @@ import Cards from 'components/articles/cards';
 const Page = () => {
   return (
     <>
-      <div className="mt-10"></div>
-      <h1>Article</h1>
-      <Cards></Cards>
+      <h2 className='font-serif'>Coming soon...</h2>
+      {/* <Cards></Cards> */}
     </>
   );
 };

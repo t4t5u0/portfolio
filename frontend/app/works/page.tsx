@@ -1,7 +1,7 @@
 const Page = () => {
   return (
     <>
-      <h1>Works</h1>
+      <h2 className='font-serif'>Coming soon...</h2>
     </>
   );
 };
