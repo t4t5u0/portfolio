@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  // swcMinify: false,
+  reactStrictMode: true, // Recommended for the `pages` directory, default in `app`.
   experimental: {
+    // Required:
     appDir: true,
   },
 };
