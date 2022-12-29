@@ -2,8 +2,8 @@ import Link from "next/link";
 
 const basicInfo = [
   { label: 'Name', value: () => <>{'Ryuki Yamamoto'}</> },
-  { label: 'Twitter', value: () => <Link href="https://twitter.com/i4mwh4ti4m" className="underline underline-offset-2">たつお(@i4mwh4ti4m)</Link> },
-  { label: 'GitHub', value: () => <Link href="https://github.com/t4t5u0" className="underline underline-offset-2">t4t5u0</Link> },
+  { label: 'Twitter', value: () => <Link href="https://twitter.com/i4mwh4ti4m" className="underline underline-offset-2" target={'_blank'}>たつお(@i4mwh4ti4m)</Link> },
+  { label: 'GitHub', value: () => <Link href="https://github.com/t4t5u0" className="underline underline-offset-2" target={'_blank'}>t4t5u0</Link> },
 ]
 
 const skills = [
@@ -12,8 +12,28 @@ const skills = [
 ]
 
 const likes = [
-  { label: 'Spotify', value: '2022年は1500時間聴いていたらしい' },
-  { label: 'OverWatch2', value: 'ラインハルトがお気に入り' },
+  {
+    label: 'Spotify',
+    value: () =>
+      <>
+        {'2022年は1500時間聴いていたらしい'}
+        <br />
+        <Link 
+        href={"https://twitter.com/search?q=%23%E3%81%9F%E3%81%A4%E3%81%8A%E3%81%AE%E5%A5%BD%E3%81%8D%E3%81%AA%E6%9B%B2&src=hashtag_click&f=live"}
+        className={"underline underline-offset-2"}
+        target={'_blank'}
+        >
+          #たつおの好きな曲
+        </Link>
+      </>
+  },
+  {
+    label: 'Overwatch2',
+    value: () =>
+      <>
+        {'ラインハルトがお気に入り'}
+      </>
+  },
 ]
 
 const BasicInfo = () => {
@@ -66,7 +86,7 @@ const Likes = () => {
           {likes.map((like, index) => (
             <tr key={index}>
               <th className="px-4 py-2 text-left">{like.label}</th>
-              <td className="px-4 py-2">{like.value}</td>
+              <td className="px-4 py-2">{like.value()}</td>
             </tr>
           ))}
         </tbody>

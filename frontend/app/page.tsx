@@ -7,7 +7,7 @@ const Page = () => {
     <>
       <p
         className={
-          'font-script text-9xl ml-10 align-bottom fixed bottom-0 pt-20 pb-10 text-[#02105C]'
+          'font-script text-9xl align-bottom fixed bottom-0 pt-20 pb-10 text-[#02105C]'
         }
       >
         No Tech, <br />
