@@ -98,7 +98,7 @@ const Likes = () => {
 const bio = [
   { year: 2000, month: 9, content: '出生' },
   { year: 2019, month: 2, content: '応用情報技術者試験合格' },
-  { year: 2019, month: 14, content: '大学入学' },
+  { year: 2019, month: 4, content: '大学入学' },
 ]
 
 
