@@ -1,4 +1,4 @@
-import Cards from 'components/articles/cards';
+import Cards from '@/ui/articles/cards';
 
 const Page = () => {
   return (

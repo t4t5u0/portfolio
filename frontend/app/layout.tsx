@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from 'components/header';
+import Header from '@/ui/header';
 import 'styles/globals.css';
 import { Noto_Sans_JP, Noto_Serif_JP, Oooh_Baby } from '@next/font/google';
 
