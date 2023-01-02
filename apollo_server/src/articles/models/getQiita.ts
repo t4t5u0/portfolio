@@ -61,7 +61,6 @@ export interface QiitaArticle {
 
 const getQiita = async (page: number) => {
   const TOKEN = process.env.QIITA_API_TOKEN;
-  console.log(TOKEN);
   const result = await fetch(`https://qiita.com/api/v2/authenticated_user/items?page=${page}&per_page=100`, {
     headers: {
       Authorization: `Bearer ${TOKEN}`,
