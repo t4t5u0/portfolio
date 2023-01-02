@@ -10,6 +10,7 @@ type Article {
   title: String!
   type: ArticleType!
   updated_at: DateTime!
+  url: String!
 }
 
 enum ArticleType {

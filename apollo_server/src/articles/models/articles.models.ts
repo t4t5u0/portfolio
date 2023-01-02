@@ -1,9 +1,9 @@
 import { Field, ID, ObjectType, registerEnumType } from '@nestjs/graphql';
 
 export enum ArticleType {
-  ZENN,
-  QIITA,
-  MISC
+  ZENN = "Zenn",
+  QIITA = "Qiita",
+  MISC = "Misc",
 }
 
 registerEnumType(ArticleType, {
@@ -32,4 +32,7 @@ export class Article {
 
   @Field(type => [String])
   tags: string[];
+
+  @Field()
+  url: string;
 }
